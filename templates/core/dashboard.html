@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %} {% block content %}
+<h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-xl font-semibold mb-2">Total Patients</h2>
+    <p class="text-3xl font-bold text-blue-600">{{ total_patients }}</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-xl font-semibold mb-2">Total Doctors</h2>
+    <p class="text-3xl font-bold text-green-600">{{ total_doctors }}</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-xl font-semibold mb-2">Total Appointments</h2>
+    <p class="text-3xl font-bold text-purple-600">{{ total_appointments }}</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-xl font-semibold mb-2">Low Stock Items</h2>
+    <p class="text-3xl font-bold text-red-600">{{ low_stock_items.count }}</p>
+  </div>
+</div>
+
+<!-- Add link to Register Patient here -->
+<div class="mt-6">
+  <a
+    href="{% url 'register_patient' %}"
+    class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+    >Register a New Patient</a
+  >
+</div>
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends 'core/base.html' %} {% block content %}
+<h1 class="text-3xl font-bold mb-6">Register Patient</h1>
+
+{% if messages %}
+<div class="messages">
+  {% for message in messages %}
+  <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+    {{ message }}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<form
+  method="POST"
+  class="bg-white p-6 rounded-lg shadow-md w-full max-w-md mx-auto"
+>
+  {% csrf_token %}
+
+  <!-- Patient Data Section -->
+  <h2 class="text-xl font-semibold mb-4">Patient Data</h2>
+
+  <!-- First Name field -->
+  <div class="mb-4">
+    <label for="first_name" class="block text-sm font-medium text-gray-700"
+      >First Name</label
+    >
+    <input
+      type="text"
+      id="first_name"
+      name="first_name"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      required
+    />
+  </div>
+
+  <!-- Last Name field -->
+  <div class="mb-4">
+    <label for="last_name" class="block text-sm font-medium text-gray-700"
+      >Last Name</label
+    >
+    <input
+      type="text"
+      id="last_name"
+      name="last_name"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      required
+    />
+  </div>
+
+  <!-- Date of Birth field -->
+  <div class="mb-4">
+    <label for="dob" class="block text-sm font-medium text-gray-700"
+      >Date of Birth</label
+    >
+    <input
+      type="date"
+      id="dob"
+      name="dob"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      required
+    />
+  </div>
+
+  <!-- Phone Number field -->
+  <div class="mb-4">
+    <label for="phone" class="block text-sm font-medium text-gray-700"
+      >Phone Number</label
+    >
+    <input
+      type="text"
+      id="phone"
+      name="phone"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      required
+    />
+  </div>
+
+  <!-- Address field -->
+  <div class="mb-4">
+    <label for="address" class="block text-sm font-medium text-gray-700"
+      >Address</label
+    >
+    <textarea
+      id="address"
+      name="address"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      required
+    ></textarea>
+  </div>
+
+  <!-- Gender field (optional) -->
+  <div class="mb-4">
+    <label for="gender" class="block text-sm font-medium text-gray-700"
+      >Gender</label
+    >
+    <select
+      id="gender"
+      name="gender"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+    >
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <!-- Blood Type field (optional) -->
+  <div class="mb-4">
+    <label for="blood_type" class="block text-sm font-medium text-gray-700"
+      >Blood Type</label
+    >
+    <input
+      type="text"
+      id="blood_type"
+      name="blood_type"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
+
+  <!-- Emergency Contact field (optional) -->
+  <div class="mb-4">
+    <label
+      for="emergency_contact"
+      class="block text-sm font-medium text-gray-700"
+      >Emergency Contact</label
+    >
+    <input
+      type="text"
+      id="emergency_contact"
+      name="emergency_contact"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
+
+  <div>
+    <button
+      type="submit"
+      class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none"
+    >
+      Register
+    </button>
+  </div>
+</form>
+{% endblock %}

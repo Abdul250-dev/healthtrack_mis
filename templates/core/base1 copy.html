@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthTrack MIS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-blue-600 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="{% url 'dashboard' %}" class="text-2xl font-bold"
+          >HealthTrack MIS</a
+        >
+        <div>
+          <a
+            href="{% url 'dashboard' %}"
+            class="px-3 py-2 rounded hover:bg-blue-700"
+            >Dashboard</a
+          >
+          <a
+            href="{% url 'patient_list' %}"
+            class="px-3 py-2 rounded hover:bg-blue-700"
+            >Patients</a
+          >
+          <a
+            href="{% url 'appointment_list' %}"
+            class="px-3 py-2 rounded hover:bg-blue-700"
+            >Appointments</a
+          >
+          <a
+            href="{% url 'inventory_list' %}"
+            class="px-3 py-2 rounded hover:bg-blue-700"
+            >Inventory</a
+          >
+          <a
+            href="{% url 'transaction_list' %}"
+            class="px-3 py-2 rounded hover:bg-blue-700"
+            >Transactions</a
+          >
+          <a
+            href="{% url 'logout' %}"
+            class="px-3 py-2 rounded hover:bg-blue-700"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </nav>
+    <main class="container mx-auto mt-8">
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>
