@@ -11,5 +11,5 @@ urlpatterns = [
     path('register-patient/', views.register_patient, name='register_patient'),
     path('edit-patient/<int:id>/', views.edit_patient, name='edit_patient'),
     path('delete-patient/<int:id>/', views.delete_patient, name='delete_patient'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(), {'next_page': '/'}, name='logout'),
 ]
